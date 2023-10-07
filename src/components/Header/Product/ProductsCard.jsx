@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductsCard = ({ product }) => {
+    console.log(product);
     const { id, name, cover, price, services } = product || {};
     return (
         <div>
