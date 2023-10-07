@@ -48,22 +48,26 @@ const DetailsCard = ({ product }) => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="card bg-base-100 px-2">
-                <figure><img className='w-full' src={cover} alt="" /></figure>
-                <div className='mah flex justify-between bg-[#0e0e0e66] relative p-5 top-[-88px]'>
-                    <div className="card-actions justify-start relative">
-                        <button onClick={handleAddToCart} className="btn bg-green-600 border-none normal-case text-xl font-semibold text-[#fff]">Add To Cart</button>
-                    </div>
-                    <div className="card-actions justify-start relative">
-                        <p className="btn bg-red-600 border-none normal-case text-xl font-semibold text-[#fff]">Price: {price} $</p>
+            <div className="flex flex-col lg:flex-row justify-around bg-base-100 px-2">
+                <div className='meh lg:w-[440px]'>
+                    <figure><img className='w-full' src={cover} alt="" /></figure>
+                    <div className='mah my-5 flex justify-between'>
+                        <div className="card-actions justify-start relative">
+                            <button onClick={handleAddToCart} className="btn bg-green-600 border-none normal-case text-xl font-semibold text-[#fff]">Add To Cart</button>
+                        </div>
+                        <div className="card-actions justify-start relative">
+                            <p className="btn bg-red-600 border-none normal-case text-xl font-semibold text-[#fff]">Price: {price} $</p>
+                        </div>
                     </div>
                 </div>
-                <div className="cardbody pb-10">
+
+                <div className="cardbody w-[730px] pb-10">
                     <h2 className="card-title text-4xl font-bold pb-3 capitalize">{name}</h2>
                     <p className='text-base'>{services}</p>
                 </div>
             </div>
         </div>
+
     );
 };
 
