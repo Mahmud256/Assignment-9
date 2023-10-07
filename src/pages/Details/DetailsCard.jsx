@@ -17,7 +17,7 @@ const DetailsCard = ({ product }) => {
             Swal.fire({
                 icon: 'success',
                 title: 'Good job!',
-                text: 'Product Donate Successfully!',
+                text: 'Product add to Cart Successfully!',
             })
         }
 
@@ -31,14 +31,14 @@ const DetailsCard = ({ product }) => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Good job!',
-                    text: 'Product Donate Successfully!',
+                    text: 'Product add to Cart Successfully!',
                 })
             }
             else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'This product has been donate before. A product can be donate at most once.....',
+                    text: 'This product has been add to Cart before. A product can be add to cart at most once.....',
                 })
             }
 
