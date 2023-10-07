@@ -1,0 +1,52 @@
+ [
+      {
+        "id": 1,
+        "name": "Workshops and Webinars",
+        "cover": "https://i.ibb.co/rQz7LhD/1-1.png",
+        "price": 50.00,
+        "services": "Our Workshops and Webinars provide a wide range of opportunities for skill development and knowledge enhancement. These interactive online events are designed to cater to diverse needs, whether you're a professional looking to upskill or someone eager to explore new areas of expertise. Our expert instructors lead engaging sessions that cover topics such as leadership, communication, technology, entrepreneurship, and more. Participants can expect hands-on activities, lively discussions, and the chance to network with peers. Our goal is to empower you with practical skills and insights that will boost your career prospects and personal growth. Join our Workshops and Webinars to embark on a journey of continuous learning and development."
+  
+      },
+      {
+        "id": 2,
+        "name": "Career Fairs",
+        "cover": "https://i.ibb.co/hMjwfVg/2.png",
+        "price": 0.00,
+        "services": "Our Career Fairs are the ultimate platform for job seekers and employers to connect. Featuring a diverse array of companies from various industries, these events offer a unique opportunity to explore job opportunities and expand your professional network. Attendees can expect to engage with industry professionals, participate in informative sessions, and receive valuable career advice. Whether you're a recent graduate seeking your first job or an experienced professional looking for new challenges, our Career Fairs cater to your needs. Join us to discover exciting career prospects, make meaningful connections, and take significant steps toward achieving your career goals."
+  
+      },
+      {
+        "id": 3,
+        "name": "Educational Conferences",
+        "cover": "https://i.ibb.co/ZWhjMJv/3.png",
+        "price": 150.00,
+        "services": "Immerse yourself in a world of knowledge at our Educational Conferences. These events offer a platform for in-depth discussions, knowledge sharing, and gaining valuable insights. With a focus on a wide range of educational topics, from pedagogy and curriculum development to educational technology and innovative teaching methods, our conferences cater to educators, researchers, and policymakers alike. Join us to engage in thought-provoking discussions, attend informative sessions, and connect with experts in the field. Our Educational Conferences are your opportunity to stay at the forefront of education and contribute to its advancement."
+  
+      },
+      {
+        "id": 4,
+        "name": "Training Programs",
+        "cover": "https://i.ibb.co/6r4Ny0q/4.png",
+        "price": 75.00,
+        "services": "Our Training Programs are designed to elevate your skills and knowledge. These hands-on programs are tailored to meet the needs of professionals in various industries. Whether you're looking to sharpen your technical skills, enhance your leadership abilities, or develop specialized expertise, our training programs offer practical, real-world training. You'll benefit from expert instructors, cutting-edge resources, and a supportive learning environment. Take the next step in your career and become a master in your field with our Training Programs."
+  
+      },
+      {
+        "id": 5,
+        "name": "Seminar Series",
+        "cover": "https://i.ibb.co/nf14Qzd/5.png",
+        "price": 25.00,
+        "services": "Dive into a world of knowledge with our Seminar Series. These seminars cover a diverse range of educational topics, from lifelong learning and personal development to emerging trends in education. Join thought leaders, researchers, and educators as they share their insights and expertise. Our Seminar Series provides a platform for lifelong learners to explore new ideas, engage in meaningful discussions, and stay informed about the latest developments in education. Stay curious and keep your mind engaged with our informative and inspiring seminars."
+  
+      },
+      {
+        "id": 6,
+        "name": "Online Courses",
+        "cover": "https://i.ibb.co/7zrdLpN/6.png",
+        "price": 99.00,
+        "services": "Take control of your learning journey with our self-paced Online Courses. Whether you're looking to acquire new skills, expand your knowledge, or pursue a personal interest, our courses offer flexibility and convenience. Access high-quality educational content from the comfort of your own home or wherever you prefer to learn. With a wide variety of courses available, you can tailor your learning experience to meet your specific goals and interests. Embrace the opportunities of online education and embark on a journey of continuous learning and personal growth."
+  
+      }
+    ]
+  
+  
