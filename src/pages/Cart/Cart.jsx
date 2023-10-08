@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react';
 import CartCard from './CartCard';
 import Navbar from '../../components/Header/Navbar/Navbar';
 import CartCalculation from './CartCalculation';
+//import { useLocation, useNavigate } from 'react-router-dom';
 
 const Cart = () => {
     const [allproducts, setProducts] = useState([]);
     const [noFound, setNofound] = useState(false);
     const [showCongratulations, setShowCongratulations] = useState(false);
+
+   
+    // const location = useLocation();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         const productItems = JSON.parse(localStorage.getItem('allproducts'));
@@ -16,6 +21,7 @@ const Cart = () => {
         } else {
             setNofound('No Data Found');
         }
+       // navigate(location?.state ? location.state : '/login');
     }, []);
 
     const handleRemoveItem = (productId) => {
