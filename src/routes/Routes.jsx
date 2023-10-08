@@ -10,6 +10,10 @@ import Footer from "../pages/Footer/Footer";
 import LoginAuth from "../pages/Login/LoginAuth";
 import Products from "../components/Header/Products/Products";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import About from "../pages/About/About";
+import Instructor from "../pages/Instructors/Instructor";
+
+
 
 
 const router = createBrowserRouter([
@@ -22,6 +26,10 @@ const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>,
             loader: () => fetch('/categories.json')
+        },       
+        {
+            path: '/instructors',
+            element: <Instructor></Instructor>,
         },       
         {
             path: '/footer',
@@ -52,6 +60,10 @@ const router = createBrowserRouter([
         {
             path: '/cart',
             element: <PrivateRoute><Cart></Cart></PrivateRoute>
+        },
+        {
+            path: '/about',
+            element: <About></About>
         }
     ]
     }

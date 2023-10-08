@@ -2,9 +2,13 @@ import React from 'react';
 import Marquee from "react-fast-marquee";
 import Navbar from '../../components/Header/Navbar/Navbar';
 import Banner from '../../components/Header/Banner/Banner';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Services from '../../components/Header/Services/Services';
 import Footer from '../Footer/Footer';
+import Instructor from '../Instructors/Instructor';
+
+
+
 
 const Home = () => {
 
@@ -22,6 +26,10 @@ const Home = () => {
             <div>
                <Services allservice={allservice}></Services>
             </div>
+
+           <Instructor></Instructor>
+            
+           
             <Footer></Footer>
         </div>
     );
