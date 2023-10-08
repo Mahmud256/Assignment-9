@@ -2,12 +2,14 @@ import React from 'react';
 import Marquee from "react-fast-marquee";
 import Navbar from '../../components/Header/Navbar/Navbar';
 import Banner from '../../components/Header/Banner/Banner';
-import { useLoaderData } from 'react-router-dom';
-import Products from '../../components/Header/Product/Products';
+import { Link, useLoaderData } from 'react-router-dom';
+import Services from '../../components/Header/Services/Services';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
-    const allproducts = useLoaderData();
-    console.log(allproducts);
+
+    const allservice = useLoaderData();
+    console.log(allservice);
     return (
         <div>
             <Navbar></Navbar>
@@ -16,8 +18,11 @@ const Home = () => {
             </Marquee>
             <Banner></Banner>
             <div>
-               <Products allproducts={allproducts}></Products>
+      </div>
+            <div>
+               <Services allservice={allservice}></Services>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

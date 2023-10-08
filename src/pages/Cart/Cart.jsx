@@ -9,9 +9,6 @@ const Cart = () => {
     const [noFound, setNofound] = useState(false);
     const [showCongratulations, setShowCongratulations] = useState(false);
 
-   
-    // const location = useLocation();
-    // const navigate = useNavigate();
 
     useEffect(() => {
         const productItems = JSON.parse(localStorage.getItem('allproducts'));
@@ -21,7 +18,6 @@ const Cart = () => {
         } else {
             setNofound('No Data Found');
         }
-       // navigate(location?.state ? location.state : '/login');
     }, []);
 
     const handleRemoveItem = (productId) => {
@@ -46,7 +42,7 @@ const Cart = () => {
 
     const handleGoToHome = () => {
         // Redirect to the home page
-        window.location.href = '/'; // Replace '/' with your home page URL
+        window.location.href = '/'; // Replace '/' with home page URL
     };
 
     return (
@@ -73,7 +69,7 @@ const Cart = () => {
                             <div className="cart_box">
                                 <button
                                     onClick={handleBuyNow}
-                                    className='btn w-32 bg-green-500 hover:bg-yellow-400 text-white'
+                                    className='btn w-36 bg-green-500 hover:bg-yellow-400 text-white'
                                 >
                                     Buy Now
                                 </button>

@@ -20,11 +20,11 @@ const CartCard = ({ product, onRemove }) => {
                     </h2>
 
                     <h2 className="card_title text-center text-xl font-medium rounded p-2">
-                        {price} $
+                        Price: {price} $
                     </h2>
 
                     <button
-                        className='btn bg-red-500 hover:bg-yellow-400 text-white'
+                        className='btn bg-red-500 hover:bg-red-700 text-white'
                         onClick={handleRemoveClick}
                     >
                         Remove This Cart

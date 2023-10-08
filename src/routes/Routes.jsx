@@ -6,6 +6,10 @@ import Register from "../pages/Register/Register";
  import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Details/Details";
 import Cart from "../pages/Cart/Cart";
+import Footer from "../pages/Footer/Footer";
+import LoginAuth from "../pages/Login/LoginAuth";
+import Services from "../components/Header/Services/Services";
+import Products from "../components/Header/Products/Products";
 
 const router = createBrowserRouter([
     {
@@ -16,14 +20,23 @@ const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>,
             loader: () => fetch('/categories.json')
+        },       
+        {
+            path: '/footer',
+            element: <Footer></Footer>
         },
         {
-            path: '/cart',
-            element: <PrivateRoute><Cart></Cart></PrivateRoute>
+            path: '/services',
+            element: <Products></Products>,
+            loader: () => fetch('/categories.json')
         },
         {
             path: '/login',
             element: <Login></Login>
+        },
+        {
+            path: '/login',
+            element: <LoginAuth></LoginAuth>
         },
         {
             path: '/register',
@@ -34,6 +47,10 @@ const router = createBrowserRouter([
             element: <PrivateRoute><Details></Details></PrivateRoute>,
             loader: () => fetch('/categories.json')
         },
+        {
+            path: '/cart',
+            element: <PrivateRoute><Cart></Cart></PrivateRoute>
+        }
     ]
     }
   ]);
