@@ -14,7 +14,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Marquee className='text-red-600 text-2xl font-bold'>
-                Welcome To Our Educational and Training Events.....
+                Welcome To Our Educational and Training Events Website.....
             </Marquee>
             <Banner></Banner>
             <div>

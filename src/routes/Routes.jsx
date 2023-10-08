@@ -8,13 +8,15 @@ import Details from "../pages/Details/Details";
 import Cart from "../pages/Cart/Cart";
 import Footer from "../pages/Footer/Footer";
 import LoginAuth from "../pages/Login/LoginAuth";
-import Services from "../components/Header/Services/Services";
 import Products from "../components/Header/Products/Products";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',

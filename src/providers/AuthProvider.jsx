@@ -16,6 +16,10 @@ const AuthProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
 
+    // const setUserAfterRegistration = (userData) => {
+    //     setUser(userData);
+    //   };
+
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -50,6 +54,7 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         createUser,
+       // setUserAfterRegistration,
         logIN,
         logOut
     }

@@ -3,7 +3,6 @@ import { FcGoogle } from 'react-icons/fc';
 import React, { useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { useLocation, useNavigate } from 'react-router-dom';
-//import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
 
 

@@ -5,6 +5,7 @@ import Navbar from '../../components/Header/Navbar/Navbar';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
 import RegisterAuth from './RegisterAuth';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -13,11 +14,14 @@ const Register = () => {
 
     const [registerError, setRegisterError] = useState('');
 
+    const [user, setUser] = useState(null);
+
     const handleRegister = async (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
 
         const name = form.get('name');
+        const photo = form.get("photo");
         const email = form.get('email');
         const password = form.get('password');
 
@@ -54,7 +58,16 @@ const Register = () => {
         try {
             const result = await createUser(email, password);
             const user = result.user;
-            
+            setUser(user);
+            console.log("IM:", user);
+
+            await updateProfile(user, {
+                displayName: name, // Set the display name
+                photoURL: photo,   // Set the photo URL
+            });
+
+
+
             Swal.fire({
                 icon: 'success',
                 title: 'Your Account Created Successfully!',
@@ -76,7 +89,6 @@ const Register = () => {
                 <div className="hero-content flex-col">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Register now!</h1>
-                        <p className="p-6">Provident cupiditate voluptatem et in.<br /> Quaerat fugiat ut assumenda excepturi exercitationem quasi.<br /> In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
@@ -87,6 +99,13 @@ const Register = () => {
                                     </label>
                                     <input type="text" placeholder="name" name="name" className="input input-bordered" required />
                                 </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" required />
+                                </div>
+
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -107,6 +126,12 @@ const Register = () => {
                             {registerError && <div className="alert alert-error">{registerError}</div>}
 
                             <RegisterAuth></RegisterAuth>
+
+                            {user &&
+                                <div>
+                                    <h2>User:{user.displayName}</h2>
+                                </div>
+                            }
                             <p className='text-center'>Already have an account <Link className='text-blue-700' to="/login">Login</Link></p>
                         </div>
                     </div>
