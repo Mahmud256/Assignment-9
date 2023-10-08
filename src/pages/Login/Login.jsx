@@ -3,6 +3,7 @@ import Navbar from '../../components/Header/Navbar/Navbar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import LoginAuth from './LoginAuth';
+import Swal from 'sweetalert2'
 
 const Login = () => {
 
@@ -13,28 +14,39 @@ const Login = () => {
     const navigate = useNavigate();
     console.log("Login",location);
 
-    const handleLogin = e => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-        console.log(form.get("password"));
-
-        const email = form.get("email");
-        const password = form.get("password");
-        console.log(form.get("password"));
-
-        //Login User
-        logIN(email, password)
-            .then((result) => {
-                const user = result.user;
-
-                navigate(location?.state ? location.state : '/');
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            })
+    
+        const email = form.get('email');
+        const password = form.get('password');
+    
+        try {
+            // Login User
+            const result = await logIN(email, password);
+            const user = result.user;
+    
+            // Display a success message with SweetAlert2
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful!',
+                text: 'You have successfully logged in.',
+            });
+    
+            navigate(location?.state ? location.state : '/');
+        } catch (error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            
+            // Display an error message with SweetAlert2
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: errorMessage,
+            });
+        }
     }
+    
     return (
         <div>
             <Navbar></Navbar>

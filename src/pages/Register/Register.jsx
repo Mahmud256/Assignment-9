@@ -3,37 +3,72 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Header/Navbar/Navbar';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2'
+import RegisterAuth from './RegisterAuth';
 
 const Register = () => {
-    
     const { createUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
-    
-    const handleRegister = e => {
+    const [registerError, setRegisterError] = useState('');
+
+    const handleRegister = async (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
 
-        
-        const name = form.get("name"); 
-        const email = form.get("email"); 
-        const password = form.get("password"); 
-        console.log(form.get("password"));
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password');
 
-        
-        createUser(email, password)
-            .then((result) => {
-                const user = result.user;
+        setRegisterError('');
 
-                navigate(location?.state ? location.state : '/');
-            })
-            .catch((error) => {
-                const errorCode = error.code; 
-                const errorMessage = error.message; 
-            })
-    }
+        const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+        if (password.length < 6) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should be at least 6 characters or longer!'
+            });
+            setRegisterError('Password should be at least 6 characters or longer');
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should have at least one uppercase character!'
+            });
+            setRegisterError('Password should have at least one uppercase character.');
+            return;
+        } else if (!specialCharacterRegex.test(password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should have at least one special character!'
+            });
+            setRegisterError('Password should have at least one special character.');
+            return;
+        }
+
+        try {
+            const result = await createUser(email, password);
+            const user = result.user;
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Your Account Created Successfully!',
+                showConfirmButton: false,
+                timer: 10000 // 10 seconds
+            });
+
+            navigate(location?.state ? location.state : '/');
+        } catch (error) {
+            console.error(error);
+            setRegisterError(error.message);
+        }
+    };
+
     return (
         <div>
             <Navbar></Navbar>
@@ -68,10 +103,10 @@ const Register = () => {
                                     <button className="btn btn-primary">Register</button>
                                 </div>
                             </form>
-                            <p className='text-center'>Or Register with <Link className='text-blue-700' to="/login"><button className="btn btn-outline w-full">
-                                <FaGoogle></FaGoogle>
-                                Google
-                            </button></Link></p>
+
+                            {registerError && <div className="alert alert-error">{registerError}</div>}
+
+                            <RegisterAuth></RegisterAuth>
                             <p className='text-center'>Already have an account <Link className='text-blue-700' to="/login">Login</Link></p>
                         </div>
                     </div>

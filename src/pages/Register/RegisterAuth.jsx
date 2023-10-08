@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 
-const LoginAuth = () => {
+const RegisterAuth = () => {
     const [user, setUser] = useState(null);
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
@@ -28,7 +28,7 @@ const LoginAuth = () => {
                 // Display a success message with SweetAlert2
                 Swal.fire({
                     icon: 'success',
-                    title: 'Login Successful!',
+                    title: 'Account Create Successful!',
                     text: 'You have successfully logged in with Google.',
                 });
             })
@@ -60,4 +60,4 @@ const LoginAuth = () => {
     );
 };
 
-export default LoginAuth;
+export default RegisterAuth;
