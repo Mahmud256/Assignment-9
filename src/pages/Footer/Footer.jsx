@@ -10,7 +10,6 @@ const Footer = () => {
                 <Link to={`/about`}>
                         About us
                     </Link>
-                    <a className="link link-hover">Contact</a>
                     <Link to={`/`}>
                         Home
                     </Link>
