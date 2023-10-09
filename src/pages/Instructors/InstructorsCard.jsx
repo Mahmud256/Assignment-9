@@ -4,7 +4,7 @@ const InstructorsCard = ({sir}) => {
     const { id, name, pic_url } = sir || {};
     return (
         <div>
-            <div className="card w-96 lg:w-72 bg-base-100 shadow-xl" data-aos="fade-up">
+            <div className="card lg:w-72 bg-base-100 shadow-xl" data-aos="fade-up">
                 <figure>
                     <img className='h-40 w-96 lg:w-72' src={pic_url} alt="" />
                 </figure>

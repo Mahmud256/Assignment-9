@@ -7,7 +7,7 @@ const ProductsCard = ({allproducts}) => {
     return (
         <div>
 
-            <div className="card w-96 lg:w-72 bg-base-100 shadow-xl">
+            <div className="card lg:w-72 bg-base-100 shadow-xl">
                 <figure>
                     <img className='h-40 w-96 lg:w-72' src={cover} alt="" />
                 </figure>
