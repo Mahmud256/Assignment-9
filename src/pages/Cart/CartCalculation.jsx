@@ -8,7 +8,7 @@ const CartCalculation = ({ allproducts }) => {
 
     return (
         <div id="calculation-entry">
-            <h6 className='text-xl font-medium my-2'>Total Price: <span id="total-price">{calculatedTotalPrice} $</span></h6>
+            <h6 className='text-xl font-medium py-2'>Total Price: <span id="total-price">{calculatedTotalPrice} $</span></h6>
         </div>
     );
 };

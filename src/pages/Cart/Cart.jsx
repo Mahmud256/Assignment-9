@@ -63,7 +63,7 @@ const Cart = () => {
                             ))}
                         </div>
 
-                        <div className="card_body">
+                        <div className="card_body py-4">
                             <CartCalculation allproducts={allproducts} />
 
                             <div className="cart_box">

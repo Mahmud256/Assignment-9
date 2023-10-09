@@ -48,7 +48,7 @@ const DetailsCard = ({ product }) => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="flex flex-col lg:flex-row justify-around bg-base-100 px-2">
+            <div className="p-2 flex flex-col lg:flex-row justify-around bg-base-100 px-2">
                 <div className='meh lg:w-[440px]'>
                     <figure><img className='w-full' src={cover} alt="" /></figure>
                     <div className='mah my-5 flex justify-between'>
@@ -61,8 +61,8 @@ const DetailsCard = ({ product }) => {
                     </div>
                 </div>
 
-                <div className="cardbody w-[730px] pb-10">
-                    <h2 className="card-title text-4xl font-bold pb-3 capitalize">{name}</h2>
+                <div className="cardbody w-330px lg:w-[730px] pb-10">
+                    <h2 className="card-title text-2xl lg:text-4xl font-bold pb-3 capitalize">{name}</h2>
                     <p className='text-base'>{services}</p>
                 </div>
             </div>
