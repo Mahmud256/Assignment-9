@@ -16,6 +16,7 @@ import Instructor from "../pages/Instructors/Instructor";
 
 
 
+
 const router = createBrowserRouter([
     {
       path: "/",

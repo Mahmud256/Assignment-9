@@ -6,6 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 import Services from '../../components/Header/Services/Services';
 import Footer from '../Footer/Footer';
 import Instructor from '../Instructors/Instructor';
+import Subscribe from '../Subscribe/Subscribe';
 
 
 
@@ -27,7 +28,7 @@ const Home = () => {
             </div>
 
            <Instructor></Instructor>
-           
+           <Subscribe></Subscribe>
             <Footer></Footer>
         </div>
     );

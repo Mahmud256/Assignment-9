@@ -15,6 +15,8 @@ const Login = () => {
     const navigate = useNavigate();
     console.log("Login", location);
 
+    
+
     const handleLogin = async (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);

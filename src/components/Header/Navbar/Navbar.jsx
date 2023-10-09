@@ -33,7 +33,6 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/services">Services</NavLink></li>
-        {/* <li><NavLink to="/footer">Footer</NavLink></li> */}
         <li><NavLink to="/cart">Cart</NavLink></li>
     </>
 
