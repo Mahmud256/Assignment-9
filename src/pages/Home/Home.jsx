@@ -9,7 +9,6 @@ import Instructor from '../Instructors/Instructor';
 
 
 
-
 const Home = () => {
 
     const allservice = useLoaderData();
@@ -28,7 +27,6 @@ const Home = () => {
             </div>
 
            <Instructor></Instructor>
-            
            
             <Footer></Footer>
         </div>

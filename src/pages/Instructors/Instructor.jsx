@@ -2,6 +2,7 @@ import React from 'react';
 import InstructorsCard from './InstructorsCard';
 import { useEffect } from 'react';
 import { useState } from 'react';
+;
 
 const Instructor = ({}) => {
     const [instructor, setAllinstructor] = useState([]);
