@@ -13,7 +13,7 @@ import Subscribe from '../Subscribe/Subscribe';
 const Home = () => {
 
     const allservice = useLoaderData();
-    console.log(allservice);
+    console.log("Alls",allservice);
     return (
         <div>
             <Navbar></Navbar>
@@ -23,7 +23,7 @@ const Home = () => {
             <Banner></Banner>
             <div>
       </div>
-            <div>
+            <div className='Allserv'>
                <Services allservice={allservice}></Services>
             </div>
 
